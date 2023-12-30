@@ -20,13 +20,13 @@ This Electron application serves as a template for building desktop applications
 
 ### Installation
 Install dependencies:
-
-    ```bash
+    ```
     npm install
     ```
 
 ### Usage
 To run the Electron app:
 
-```bash
-npm run start
+    ```
+    npm run start
+    ```
