@@ -20,7 +20,9 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a class="brand-logo center" style="font-size: 20px;">Customer Information</a>
+      <a class="brand-logo center" style="font-size: 20px; margin-left:-350px">Sample Dropdowns:</a>
+      <a class="brand-logo center" style="font-size: 20px;">Customers</a>
+      <a class="brand-logo center" style="font-size: 20px; margin-left:300px">Products</a>
     </div>
   </nav>
 </body>
@@ -35,11 +37,8 @@
       </tr>
     </thead>
   </table>
-  <canvas id="myChart" width="400" height="200"></canvas>
-
-
+  <canvas id="myChart" width="40" height="20"></canvas>
 </body>
-
 <script>
   $(document).ready(function () {
     // DataTable initialization
@@ -58,12 +57,12 @@
           callback({
             draw: data.draw,
             data: out,
-            recordsTotal: 500,
-            recordsFiltered: 500
+            recordsTotal: 700,
+            recordsFiltered: 700
           });
-        }, 50);
+        }, 80);
       },
-      scrollY: 200,
+      scrollY: 400,
       scroller: {
         loadingIndicator: true
       },
@@ -92,19 +91,15 @@
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
           ],
-          borderWidth: 1
+          borderWidth: 2
         }]
       },
       options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
+        indexAxis: 'y',
+        maintainAspectRation: false,
       }
     });
   });
 </script>
-
 
 </html>
