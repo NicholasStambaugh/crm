@@ -19,28 +19,14 @@ This Electron application serves as a template for building desktop applications
 - Node.js: Ensure that Node.js is installed on your machine.
 
 ### Installation
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/your-username/your-electron-app.git
-    ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd your-electron-app
-    ```
-
-3. Install dependencies:
+Install dependencies:
 
     ```bash
     npm install
     ```
 
 ### Usage
-
 To run the Electron app:
 
 ```bash
-npm start
+npm run start
