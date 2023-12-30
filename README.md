@@ -5,11 +5,8 @@ This Electron application serves as a template for building desktop applications
 ## Features
 
 - **Electron Framework:** A cross-platform framework for building desktop applications using web technologies.
-
 - **DataTables Integration:** Utilizes the DataTables jQuery plugin to display and manage tabular data efficiently.
-
 - **Chart.js Integration:** Incorporates Chart.js for creating dynamic and interactive charts.
-
 - **Responsive Design:** The application has responsive design principles, ensuring usability across different screen sizes.
 
 ## Getting Started
@@ -19,17 +16,23 @@ This Electron application serves as a template for building desktop applications
 - Node.js: Ensure that Node.js is installed on your machine.
 
 ### Installation
-Install dependencies:
+
+
+1. Navigate to the project directory:
 
     ```bash
+    cd electron-datatable
+    ```
 
+3. Install dependencies:
+
+    ```bash
     npm install
     ```
 
 ### Usage
+
 To run the Electron app:
 
-    ```bash
-    
-    npm run start
-    ```
+```bash
+npm start
