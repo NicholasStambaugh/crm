@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CRM-alpha-build</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.19/css/scroller.jquery.dataTables.min.css">
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- Include Chart.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo center" style="font-size: 20px;">Customer Information</a>
+    </div>
+  </nav>
+</body>
+  <table id="example" class="display nowrap" style="width:100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>ZIP / Post code</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+  </table>
+  <canvas id="myChart" width="400" height="200"></canvas>
+
+
+</body>
+
+<script>
+  $(document).ready(function () {
+    // DataTable initialization
+    $('#example').DataTable({
+      serverSide: true,
+      ordering: false,
+      searching: false,
+      ajax: function (data, callback, settings) {
+        var out = [];
+
+        for (var i = data.start, ien = data.start + data.length; i < ien; i++) {
+          out.push([i + '-1', i + '-2', i + '-3', i + '-4', i + '-5']);
+        }
+
+        setTimeout(function () {
+          callback({
+            draw: data.draw,
+            data: out,
+            recordsTotal: 500,
+            recordsFiltered: 500
+          });
+        }, 50);
+      },
+      scrollY: 200,
+      scroller: {
+        loadingIndicator: true
+      },
+    });
+
+    // Chart.js initialization
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
+        datasets: [{
+          label: 'Sample Chart',
+          data: [12, 19, 3, 5, 2],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  });
+</script>
+
+
+</html>
