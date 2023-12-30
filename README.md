@@ -21,7 +21,7 @@ This Electron application serves as a template for building desktop applications
 1. Navigate to the project directory:
 
     ```bash
-    cd electron-datatable
+    cd crm
     ```
 
 3. Install dependencies:
